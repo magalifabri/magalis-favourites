@@ -9,16 +9,21 @@
 
     <!-- load search results if they're available -->
 
-    <?php if (!empty($this->movies)) : ?>
-        <?php foreach ($this->movies as $movie) : ?>
+    <?php if (!empty($movies)) : ?>
+        <?php foreach ($movies as $movie) : ?>
 
             <p>
                 <a href="?page=movie-details&imdb-id=<?= $movie->imdbId ?>">
                     <?= $movie->title ?>
                 </a>
             </p>
+
             <p><?= $movie->imdbId ?></p>
-            <img height="200" src="<?= $movie->imdbPosterUrl ?>">
+
+            <?php if (!empty($movie->imdbPosterUrl)) : ?>
+                <img height="200" src="<?= $movie->imdbPosterUrl ?>">
+            <?php endif ?>
+
         <?php endforeach ?>
     <?php endif ?>
 </main>

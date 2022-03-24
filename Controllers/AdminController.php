@@ -2,18 +2,16 @@
 
 class AdminController
 {
-    public array $movies;
-
     public function index()
     {
         // check for form
         if (!empty($_POST['title'])) {
-            // $query = $_POST['title'];
-            // $firstLetter = $query[0];
-            // $apiUrl = "https://v2.sg.media-imdb.com/suggestion/{$firstLetter}/{$query}.json";
-            // $searchResults = $this->getSearchResults($apiUrl);
-            $searchResults = $_SESSION['data']; // dummy data
-            $this->movies = $this->parseSearchResults($searchResults);
+            $query = $_POST['title'];
+            $firstLetter = $query[0];
+            $apiUrl = "https://v2.sg.media-imdb.com/suggestion/{$firstLetter}/{$query}.json";
+            $searchResults = $this->getSearchResults($apiUrl);
+            // $searchResults = $_SESSION['data']; // dummy data
+            $movies = $this->parseSearchResults($searchResults);
         }
 
         require_once 'Views/AdminView.php';
@@ -41,7 +39,7 @@ class AdminController
             if ($mediaType === 'feature') {
                 $title = $movie['l'];
                 $imdbId = $movie['id'];
-                $imdbPosterUrl = $movie['i']['imageUrl'];
+                $imdbPosterUrl = $movie['i']['imageUrl'] ?? '';
 
                 $movies[$imdbId] = new Movie($title, $imdbId, $imdbPosterUrl);
             }
