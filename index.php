@@ -20,6 +20,10 @@ switch ($page) {
         (new AdminController())->index();
         break;
 
+    case 'movie-details':
+        (new AdminController())->show();
+        break;
+
     default:
         # code...
         break;
