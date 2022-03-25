@@ -29,7 +29,7 @@
     <main>
         <hr class="filter-border above">
         <section class="filter-buttons">
-            <!-- <button class="show-all-button">show all</button> -->
+            <button class="show-all-button">show all</button>
             <button class="filter-button Drama">Drama</button>
             <button class="filter-button Sci-Fi">Sci-Fi</button>
             <button class="filter-button Adventure">Adventure</button>

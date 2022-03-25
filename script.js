@@ -65,16 +65,17 @@
 //     }
 // }
 
-// const showAllButton = document.querySelector(".show-all-button");
-// showAllButton.addEventListener("click", () => {
-//     for (const card of cards) {
-//         card.style.display = "flex";
-//     }
-// });
+const cards = document.querySelectorAll(".card");
+const showAllButton = document.querySelector(".show-all-button");
+
+showAllButton.addEventListener("click", () => {
+    for (const card of cards) {
+        card.style.display = "flex";
+    }
+});
 
 
 const filterButtons = document.querySelectorAll(".filter-button");
-const cards = document.querySelectorAll(".card");
 
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
