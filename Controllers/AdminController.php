@@ -85,6 +85,12 @@ class AdminController
     {
         $movie = unserialize(urldecode($_POST['serialized-movie']));
         $genresJson = json_encode($movie->genres);
+
+        if ($this->movieInDb($movie->imdbId)) {
+            echo 'movie already in db';
+            die;
+        }
+
         $dbConn = new DatabaseManager();
 
         $query =
@@ -101,5 +107,25 @@ class AdminController
         $stmt->execute();
 
         die;
+    }
+
+    private function movieInDb($imdbId): bool
+    {
+        $dbConn = new DatabaseManager();
+
+        $query =
+            "SELECT *
+            FROM movies
+            WHERE imdb_id = :imdb_id;";
+        $stmt = $dbConn->connection->prepare($query);
+        $stmt->bindParam(':imdb_id', $imdbId);
+        $stmt->execute();
+        $result = $stmt->fetch();
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
