@@ -11,6 +11,8 @@ session_start();
 
 require_once 'classes/Movie.php';
 require_once 'classes/DatabaseManager.php';
+
+require_once 'Models/MovieModel.php';
 require_once 'Controllers/AdminController.php';
 
 
