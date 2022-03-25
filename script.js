@@ -5,13 +5,17 @@ showAllButton.addEventListener("click", () => {
     for (const card of cards) {
         card.style.display = "flex";
     }
+
+    for (const button of filterButtons) {
+        button.classList.remove("active");
+    }
 });
 
 
 const filterButtons = document.querySelectorAll(".filter-button");
 
 filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", event => {
         const genreToFilter = button.textContent;
 
         for (const card of cards) {
@@ -25,6 +29,12 @@ filterButtons.forEach(button => {
                 }
             }
         }
+
+        for (const button of filterButtons) {
+            button.classList.remove("active");
+        }
+
+        event.target.classList.add("active");
     });
 });
 

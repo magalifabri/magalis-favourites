@@ -64,8 +64,9 @@ header h1::first-line {
   cursor: pointer;
   transition: all 0.3s;
 }
-.show-all-button:active,
-.filter-button:active {
+.show-all-button:active, .show-all-button.active,
+.filter-button:active,
+.filter-button.active {
   color: #00eeff;
   transition: all 0s;
 }

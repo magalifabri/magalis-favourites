@@ -77,7 +77,9 @@ header {
     cursor: pointer;
     transition: all .3s;
 
-    &:active {
+    &:active,
+    &.active
+    {
         color: rgb(0, 238, 255);
         transition: all 0s;
     }
@@ -88,6 +90,8 @@ header {
     background-color: white;
     border: 1px solid black;
 }
+
+
 
 
 // SEARCHBAR
