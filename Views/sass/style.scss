@@ -1,22 +1,26 @@
-// card > cover-img + genres-container + data-container > title + year + rating + link 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 /*
+font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
-font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Roboto Serif', serif;
 */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
-    // border: 1px solid gray;
 }
 
 body {
     min-width: 300px;
     padding: 0 1rem 1rem;
-    font-family: 'Roboto', sans-serif;
+
+    color: rgb(39, 39, 39);
+    font-family: 'Open Sans', sans-serif;
     background-color: rgb(241, 239, 236);
 }
 
@@ -92,8 +96,6 @@ header {
 }
 
 
-
-
 // SEARCHBAR
 
 .search-bar {
@@ -124,8 +126,6 @@ header {
     }
 }
 
-
-// <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Pixel perfect - Flaticon</a>
 
 // CARDS
 
@@ -164,7 +164,7 @@ header {
     font-size: 200%;
 
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .title,
@@ -208,6 +208,7 @@ header {
 
 .description {
     margin: auto 0; // take leftover space for vertical alignment
+    line-height: 1.75;
 }
 
 .card hr {
@@ -226,7 +227,8 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    
+
+    font-family: 'Roboto', sans-serif;
     font-size: .8rem;
 }
 
@@ -237,74 +239,9 @@ header {
     
     text-decoration: none;
     color: black;
-    font-family: 'Roboto', sans-serif;
     font-size: .7rem;
-    font-weight: bold;
+    font-weight: 900;
 }
-
-// @media (hover: hover) {
-//     header {
-//         background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(241, 239, 236), rgba(255, 255, 255, 0));
-//         position: relative;
-//         z-index: 2;
-//     }
-
-//     .card {
-//         transition: all .3s;
-        
-//         &:hover {
-//             box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.199);
-//             z-index: 1;
-//             transform: scale(102%);
-//         }
-//     }
-// }
-
-
-/*
-.searchbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem auto 0;
-    height: 35px;
-}
-
-.searchbar img {
-    order: 1;
-    height: 100%;
-    padding: 10px;
-    
-    border-radius: 15px 0 0 15px;
-    border: 1px solid lightgray;
-    border-right: none;
-    background-color: white;
-    transition: all .2s;
-}
-
-.search {
-    order: 2;
-    border: 1px solid lightgray;
-    border-left: none;
-    border-radius: 0 15px 15px 0;
-    height: 100%;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 100%;
-    transition: all .2s;
-
-    &:focus {
-        outline: none;
-        border: 1px solid black;
-        border-left: none;
-    }
-}
-
-.search:focus + img {
-    border: 1px solid black;
-    border-right: none;
-}
-*/
 
 
 // FOOTER
@@ -312,6 +249,7 @@ header {
 footer {
     padding: 2rem 2rem 0;
     position: relative;
+    
     text-align: center;
     font-size: .9rem;
 
