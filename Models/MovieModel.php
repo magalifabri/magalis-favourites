@@ -27,11 +27,13 @@ class MovieModel
             $genres = $movieRaw['genres'];
             $rating = $movieRaw['rating'];
             $poster = $movieRaw['poster'];
+            $plot = $movieRaw['plot'];
 
             $movie = new Movie($title, $imdbId, $poster);
             $movie->imdbRating = $rating;
             $movie->year = $year;
             $movie->genres = json_decode($genres);
+            $movie->plot = $plot;
 
             $movies[] = $movie;
         }
