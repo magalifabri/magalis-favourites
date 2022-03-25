@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="Views/sass/style.css">
+    <script defer src="script.js"></script>
+
     <title>Magali's Collection</title>
 </head>
 
@@ -25,9 +27,9 @@
     </header>
 
     <main>
-        <!-- <hr class="filter-border above">
+        <hr class="filter-border above">
         <section class="filter-buttons">
-            <button class="show-all-button">show all</button>
+            <!-- <button class="show-all-button">show all</button> -->
             <button class="filter-button Drama">Drama</button>
             <button class="filter-button Sci-Fi">Sci-Fi</button>
             <button class="filter-button Adventure">Adventure</button>
@@ -39,8 +41,8 @@
             <button class="filter-button Mystery">Mystery</button>
             <button class="filter-button Horror">Horror</button>
         </section>
-        <input type="text" class="search-bar" placeholder="title / year / genre">
-        <hr class="filter-border below"> -->
+        <!-- <input type="text" class="search-bar" placeholder="title / year / genre"> -->
+        <hr class="filter-border below">
 
         <section class="cards-container">
             <?php foreach ($movies as $movie) : ?>
