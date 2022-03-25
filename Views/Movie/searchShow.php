@@ -15,6 +15,7 @@
             <li><?= $genre ?></li>
         <?php endforeach ?>
     </ul>
+    <p><?= $movie->plot ?></p>
 </main>
 
 <?php require_once 'Views/includes/footer.php' ?>

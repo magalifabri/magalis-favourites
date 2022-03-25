@@ -42,12 +42,12 @@ class MovieModel
 
     public function getSearchResults()
     {
-        // $query = $_GET['title'];
-        // $firstLetter = $query[0];
-        // $apiUrl = "https://v2.sg.media-imdb.com/suggestion/{$firstLetter}/{$query}.json";
-        // $searchResults = $this->curlApi($apiUrl);
-        // $_SESSION['data'] = $searchResults;
-        $searchResults = $_SESSION['data']; // dummy data
+        $query = $_GET['title'];
+        $firstLetter = $query[0];
+        $apiUrl = "https://v2.sg.media-imdb.com/suggestion/{$firstLetter}/{$query}.json";
+        $searchResults = $this->curlApi($apiUrl);
+        $_SESSION['data'] = $searchResults;
+        // $searchResults = $_SESSION['data']; // dummy data
         $movies = $this->parseSearchResults($searchResults);
 
         return $movies;
@@ -107,11 +107,13 @@ class MovieModel
         $genres = $data['Genre'];
         $rating = $data['imdbRating'];
         $poster = $data['Poster'];
+        $plot = $data['Plot'];
 
         $movie = new Movie($title, $imdbId, $poster);
         $movie->imdbRating = $rating;
         $movie->year = $year;
         $movie->genres = explode(', ', $genres);
+        $movie->plot = $plot;
 
         return $movie;
     }
@@ -129,8 +131,8 @@ class MovieModel
 
         $query =
             'INSERT INTO movies
-                (imdb_id, title, year, genres, poster, rating)
-            VALUES (:imdb_id, :title, :year, :genres, :poster, :rating)';
+                (imdb_id, title, year, genres, poster, rating, plot)
+            VALUES (:imdb_id, :title, :year, :genres, :poster, :rating, :plot)';
         $stmt = $this->dbConn->connection->prepare($query);
         $stmt->bindParam(':imdb_id', $movie->imdbId);
         $stmt->bindParam(':title', $movie->title);
@@ -138,6 +140,7 @@ class MovieModel
         $stmt->bindParam(':genres', $genresJson);
         $stmt->bindParam(':poster', $movie->imdbPosterUrl);
         $stmt->bindParam(':rating', $movie->imdbRating);
+        $stmt->bindParam(':plot', $movie->plot);
         $stmt->execute();
     }
 
