@@ -10,6 +10,22 @@ class MovieModel
     }
 
 
+    // public function index()
+    // {
+    //     $query =
+    //         'SELECT *
+    //         FROM movies;';
+    //     $stmt = $this->dbConn->connection->query($query);
+    //     $results = $stmt->fetchAll();
+
+    //     echo '<pre>';
+    //     var_dump($results);
+    //     echo '</pre>';
+    //     die;
+    //     return $results;
+    // }
+
+
     public function getSearchResults()
     {
         // $query = $_GET['title'];

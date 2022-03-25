@@ -1,6 +1,6 @@
 <?php
 
-class AdminController
+class MovieController
 {
     private MovieModel $movieModel;
 
@@ -18,7 +18,7 @@ class AdminController
             $movies = $this->movieModel->getSearchResults();
         }
 
-        require_once 'Views/AdminView.php';
+        require_once 'Views/Movie/searchIndex.php';
     }
 
     // show details of selected search result
@@ -26,7 +26,7 @@ class AdminController
     {
         $movie = $this->movieModel->getDetails();
 
-        require_once 'Views/MovieDetailsView.php';
+        require_once 'Views/Movie/searchShow.php';
     }
 
     // create movie in db
