@@ -11,7 +11,7 @@ font-family: 'Montserrat', sans-serif;
 
 body {
   min-width: 300px;
-  padding: 0 10px 20px;
+  padding: 0 1rem 1rem;
   font-family: "Roboto", sans-serif;
   background-color: #f1efec;
 }
@@ -274,5 +274,27 @@ header h1::first-line {
     border-right: none;
 }
 */
+footer {
+  padding: 2rem 2rem 0;
+  position: relative;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer p {
+  line-height: 2rem;
+}
+footer hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #b9b9b9;
+}
+footer .login {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+footer .login img {
+  height: 2rem;
+}
 
 /*# sourceMappingURL=style.css.map */
