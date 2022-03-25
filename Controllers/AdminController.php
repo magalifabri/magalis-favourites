@@ -89,9 +89,10 @@ class AdminController
 
         $query =
             'INSERT INTO movies
-                (title, year, genres, poster, rating)
-            VALUES (:title, :year, :genres, :poster, :rating)';
+                (imdb_id, title, year, genres, poster, rating)
+            VALUES (:imdb_id, :title, :year, :genres, :poster, :rating)';
         $stmt = $dbConn->connection->prepare($query);
+        $stmt->bindParam(':imdb_id', $movie->imdbId);
         $stmt->bindParam(':title', $movie->title);
         $stmt->bindParam(':year', $movie->year);
         $stmt->bindParam(':genres', $genresJson);
