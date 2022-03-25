@@ -1,0 +1,303 @@
+// card > cover-img + genres-container + data-container > title + year + rating + link 
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    // border: 1px solid gray;
+}
+
+body {
+    min-width: 300px;
+    padding: 0 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(241, 239, 236);
+}
+
+
+// HEADER
+
+header {
+    padding: 2rem 2rem 1.5rem;
+    
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+
+    h1::first-line {
+        font-weight: 400;
+        font-size: 2.9rem;
+    }
+}
+
+
+// FILTER BUTTONS
+
+.filter-border {
+    margin-top: 1rem;
+    border: none;
+    border-top: 1px solid rgb(185, 185, 185);
+    &.above {
+        margin: 0rem 2rem .5rem;
+    }
+    &.below {
+        margin: .5rem 2rem 2rem;
+    }
+}
+
+.filter-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.show-all-button,
+.filter-button {
+    border: none;
+    padding: 1px 5px;
+    border-radius: 3px;
+    
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:active {
+        color: rgb(0, 238, 255);
+        transition: all 0s;
+    }
+}
+
+.show-all-button {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+
+// SEARCHBAR
+
+.search-bar {
+    display: flex;
+    margin: 1rem auto 0;
+
+    width: 45px;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    padding: 10px;
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    text-indent: 25px;
+
+    background-image: url("../images/loupe.png");
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: 20px;
+
+    transition: all .3s;
+
+    &:focus {
+        width: 200px;
+        outline: none;
+        border: 1px solid black;
+        background-size: 0%;
+    }
+}
+
+
+// <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Pixel perfect - Flaticon</a>
+
+// CARDS
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.card {
+    max-width: 300px;
+    border-radius: 15px;
+    padding-bottom: .7rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .7rem;
+
+    text-align: center;
+    background-color: white;
+}
+
+.cover-img {
+    width: 100%;
+    height: 444px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    display: flex; // remove whitespace after inline element
+}
+
+.title {
+    width: 100%;
+    font-size: 200%;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.title,
+.genres-container,
+.description,
+.data-container {
+    padding: 0 .8rem;
+}
+
+
+// CARDS - GENRES
+
+.genres-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.genre {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding: 1px 5px;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.Drama { background-color: rgb(40, 146, 137); }
+.Sci-Fi { background-color: rgb(107, 35, 129); }
+.Adventure { background-color: rgb(116, 78, 61); }
+.Action { background-color: rgb(179, 45, 45); }
+.Thriller { background-color: rgb(48, 48, 48); }
+.Comedy { background-color: rgb(172, 50, 146); }
+.Romance { background-color: rgb(184, 136, 144); }
+.Crime { background-color: rgb(82, 82, 168); }
+.Mystery { background-color: gray; }
+.Horror { background-color: rgb(77, 138, 48); }
+
+
+.description {
+    margin: auto 0; // take leftover space for vertical alignment
+}
+
+.card hr {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid rgb(220, 220, 220);
+}
+
+
+// CARDS - DATA
+
+.data-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    font-size: .8rem;
+}
+
+.link {
+    background: #f5c518;
+    border-radius: 3px;
+    padding: 3px 4px;
+    
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+// @media (hover: hover) {
+//     header {
+//         background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(241, 239, 236), rgba(255, 255, 255, 0));
+//         position: relative;
+//         z-index: 2;
+//     }
+
+//     .card {
+//         transition: all .3s;
+        
+//         &:hover {
+//             box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.199);
+//             z-index: 1;
+//             transform: scale(102%);
+//         }
+//     }
+// }
+
+
+/*
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto 0;
+    height: 35px;
+}
+
+.searchbar img {
+    order: 1;
+    height: 100%;
+    padding: 10px;
+    
+    border-radius: 15px 0 0 15px;
+    border: 1px solid lightgray;
+    border-right: none;
+    background-color: white;
+    transition: all .2s;
+}
+
+.search {
+    order: 2;
+    border: 1px solid lightgray;
+    border-left: none;
+    border-radius: 0 15px 15px 0;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    transition: all .2s;
+
+    &:focus {
+        outline: none;
+        border: 1px solid black;
+        border-left: none;
+    }
+}
+
+.search:focus + img {
+    border: 1px solid black;
+    border-right: none;
+}
+*/
