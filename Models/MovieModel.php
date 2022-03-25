@@ -10,20 +10,34 @@ class MovieModel
     }
 
 
-    // public function index()
-    // {
-    //     $query =
-    //         'SELECT *
-    //         FROM movies;';
-    //     $stmt = $this->dbConn->connection->query($query);
-    //     $results = $stmt->fetchAll();
+    public function getMovies(): array
+    {
+        $query =
+            'SELECT *
+            FROM movies;';
+        $stmt = $this->dbConn->connection->query($query);
+        $moviesRaw = $stmt->fetchAll();
 
-    //     echo '<pre>';
-    //     var_dump($results);
-    //     echo '</pre>';
-    //     die;
-    //     return $results;
-    // }
+        $movies = [];
+
+        foreach ($moviesRaw as $movieRaw) {
+            $imdbId = $movieRaw['imdb_id'];
+            $title = $movieRaw['title'];
+            $year = $movieRaw['year'];
+            $genres = $movieRaw['genres'];
+            $rating = $movieRaw['rating'];
+            $poster = $movieRaw['poster'];
+
+            $movie = new Movie($title, $imdbId, $poster);
+            $movie->imdbRating = $rating;
+            $movie->year = $year;
+            $movie->genres = json_decode($genres);
+
+            $movies[] = $movie;
+        }
+
+        return $movies;
+    }
 
 
     public function getSearchResults()

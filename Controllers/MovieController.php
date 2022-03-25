@@ -10,8 +10,16 @@ class MovieController
     }
 
 
-    // show list of search results
+    // show grid of movies in db
     public function index()
+    {
+        $movies = $this->movieModel->getMovies();
+
+        require_once 'Views/Movie/index.php';
+    }
+
+    // show list of search results
+    public function search()
     {
         // check for form
         if (!empty($_GET['title'])) {

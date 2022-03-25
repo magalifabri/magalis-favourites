@@ -20,7 +20,7 @@ $page = $_GET['page'] ?? null;
 
 switch ($page) {
     case 'admin':
-        (new MovieController())->index();
+        (new MovieController())->search();
         break;
 
     case 'movie-details':
@@ -32,6 +32,6 @@ switch ($page) {
         break;
 
     default:
-        # code...
+        (new MovieController())->index();
         break;
 }
