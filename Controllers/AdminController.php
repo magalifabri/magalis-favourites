@@ -5,8 +5,8 @@ class AdminController
     public function index()
     {
         // check for form
-        if (!empty($_POST['title'])) {
-            // $query = $_POST['title'];
+        if (!empty($_GET['title'])) {
+            // $query = $_GET['title'];
             // $firstLetter = $query[0];
             // $apiUrl = "https://v2.sg.media-imdb.com/suggestion/{$firstLetter}/{$query}.json";
             // $searchResults = $this->curlApi($apiUrl);

@@ -3,8 +3,9 @@
 <main>
     <!-- get movie title to search for  -->
 
-    <form action="" method="POST">
-        <input type="text" name="title" value="<?= $_POST['title'] ?>">
+    <form action="" method="GET">
+        <input type="text" name="title" value="<?= $_GET['title'] ?? '' ?>">
+        <button type="submit" name="page" value="admin">search</button>
     </form>
 
     <!-- load search results if they're available -->
