@@ -41,7 +41,7 @@
             <button class="filter-button Mystery">Mystery</button>
             <button class="filter-button Horror">Horror</button>
         </section>
-        <!-- <input type="text" class="search-bar" placeholder="title / year / genre"> -->
+        <input type="text" class="search-bar" placeholder="title / year">
         <hr class="filter-border below">
 
         <section class="cards-container">

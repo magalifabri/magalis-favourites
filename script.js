@@ -108,7 +108,23 @@ filterButtons.forEach(button => {
 //     });
 // });
 
-// const searchElem = document.querySelector("input.search-bar");
+const searchElem = document.querySelector("input.search-bar");
+searchElem.addEventListener("input", () => {
+    for (const card of cards) {
+        const query = searchElem.value.toLowerCase().trim();
+        const title = card.children[1].textContent
+        const year = card.children[5].children[0].textContent
+
+        const titleMatch = title.toLowerCase().includes(query);
+        const yearMatch = year.toString().includes(query);
+
+        if (titleMatch || yearMatch) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    }
+});
 // searchElem.addEventListener("input", () => {
 //     for (const movie of COLLECTION) {
 //         const query = searchElem.value.toLowerCase().trim();
