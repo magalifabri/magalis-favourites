@@ -79,4 +79,26 @@ class AdminController
 
         return $movie;
     }
+
+
+    public function addMovie()
+    {
+        $movie = unserialize(urldecode($_POST['serialized-movie']));
+        $genresJson = json_encode($movie->genres);
+        $dbConn = new DatabaseManager();
+
+        $query =
+            'INSERT INTO movies
+                (title, year, genres, poster, rating)
+            VALUES (:title, :year, :genres, :poster, :rating)';
+        $stmt = $dbConn->connection->prepare($query);
+        $stmt->bindParam(':title', $movie->title);
+        $stmt->bindParam(':year', $movie->year);
+        $stmt->bindParam(':genres', $genresJson);
+        $stmt->bindParam(':poster', $movie->imdbPosterUrl);
+        $stmt->bindParam(':rating', $movie->imdbRating);
+        $stmt->execute();
+
+        die;
+    }
 }

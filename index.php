@@ -10,6 +10,7 @@ session_start();
 
 
 require_once 'classes/Movie.php';
+require_once 'classes/DatabaseManager.php';
 require_once 'Controllers/AdminController.php';
 
 
@@ -22,6 +23,10 @@ switch ($page) {
 
     case 'movie-details':
         (new AdminController())->show();
+        break;
+
+    case 'add-movie':
+        (new AdminController())->addMovie();
         break;
 
     default:

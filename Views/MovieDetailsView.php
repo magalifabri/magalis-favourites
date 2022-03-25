@@ -1,6 +1,11 @@
 <?php require_once 'Views/includes/header.php' ?>
 
 <main>
+    <form action="?page=add-movie" method="POST">
+        <button type="submit" name="page" value="add-movie">+</button>
+        <input type="hidden" name="serialized-movie" value="<?= urlencode(serialize($movie)) ?>">
+    </form>
+
     <p><?= $movie->title ?></p>
     <p><?= $movie->year ?></p>
     <p><?= $movie->imdbRating ?></p>
