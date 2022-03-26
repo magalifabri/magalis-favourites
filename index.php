@@ -12,13 +12,20 @@ session_start();
 require_once 'classes/Movie.php';
 require_once 'classes/DatabaseManager.php';
 
+require_once 'Models/LoginModel.php';
 require_once 'Models/MovieModel.php';
+
 require_once 'Controllers/MovieController.php';
+require_once 'Controllers/LoginController.php';
 
 
 $page = $_GET['page'] ?? null;
 
 switch ($page) {
+    case 'login':
+        (new LoginController())->login();
+        break;
+
     case 'admin':
         (new MovieController())->search();
         break;

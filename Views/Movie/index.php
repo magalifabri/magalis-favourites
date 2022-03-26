@@ -65,7 +65,7 @@
         <p>deployed on <a href="https://www.heroku.com/home">Heroku</a></p>
         <p>icons from <a href="https://icons8.com/">Icons8</a></p>
         <p>data from <a href="https://www.imdb.com/">IMDb</a> and <a href="http://www.omdbapi.com/">OMDb API</a></p>
-        <a class="login" href="#"><img src="./Views/images/login.png" alt=""></a>
+        <a class="login" href="?page=login"><img src="./Views/images/login.png" alt=""></a>
     </footer>
 
 </body>
