@@ -42,6 +42,6 @@ class MovieController
     {
         $this->movieModel->create();
 
-        die;
+        require_once 'Views/Movie/movieAdded.php';
     }
 }
