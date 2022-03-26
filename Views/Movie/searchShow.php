@@ -1,5 +1,8 @@
 <?php require_once 'Views/includes/header.php' ?>
 
+<button class="back" onclick="history.back()"> ↩︎ </button>
+<br>
+<br>
 <main>
     <?php if (empty($_SESSION['loggedIn'])) : ?>
         <p>permission denied</p>
