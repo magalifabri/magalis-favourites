@@ -83,7 +83,7 @@ header h1::first-line {
 
 .search-bar {
   display: flex;
-  margin: 1rem auto 0;
+  margin: 1rem auto;
   width: 45px;
   border: 1px solid lightgray;
   border-radius: 25px;
@@ -155,52 +155,12 @@ header h1::first-line {
 
 .genre {
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: #8d8d8d;
   padding: 1px 5px;
   text-transform: uppercase;
   font-size: 0.6rem;
   border-radius: 3px;
   font-weight: 600;
-}
-
-.Drama {
-  background-color: #289289;
-}
-
-.Sci-Fi {
-  background-color: #6b2381;
-}
-
-.Adventure {
-  background-color: #744e3d;
-}
-
-.Action {
-  background-color: #b32d2d;
-}
-
-.Thriller {
-  background-color: #303030;
-}
-
-.Comedy {
-  background-color: #ac3292;
-}
-
-.Romance {
-  background-color: #b88890;
-}
-
-.Crime {
-  background-color: #5252a8;
-}
-
-.Mystery {
-  background-color: gray;
-}
-
-.Horror {
-  background-color: #4d8a30;
 }
 
 .description {

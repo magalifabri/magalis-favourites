@@ -19,19 +19,6 @@
 
     <main>
         <hr class="filter-border above">
-        <section class="filter-buttons">
-            <button class="show-all-button">show all</button>
-            <button class="filter-button Drama">Drama</button>
-            <button class="filter-button Sci-Fi">Sci-Fi</button>
-            <button class="filter-button Adventure">Adventure</button>
-            <button class="filter-button Action">Action</button>
-            <button class="filter-button Thriller">Thriller</button>
-            <button class="filter-button Comedy">Comedy</button>
-            <button class="filter-button Romance">Romance</button>
-            <button class="filter-button Crime">Crime</button>
-            <button class="filter-button Mystery">Mystery</button>
-            <button class="filter-button Horror">Horror</button>
-        </section>
         <input type="text" class="search-bar" placeholder="title / year / genre">
         <hr class="filter-border below">
 
