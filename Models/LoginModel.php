@@ -26,7 +26,7 @@ class LoginModel
     {
         $query =
             "SELECT *
-            FROM users
+            FROM magalis_favourites__users
             WHERE username = :username;";
         $stmt = $this->dbConn->connection->prepare($query);
         $stmt->bindParam(':username', $_POST['username']);

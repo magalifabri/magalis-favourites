@@ -14,7 +14,7 @@ class MovieModel
     {
         $query =
             'SELECT *
-            FROM movies;';
+            FROM magalis_favourites__movies;';
         $stmt = $this->dbConn->connection->query($query);
         $moviesRaw = $stmt->fetchAll();
 
@@ -48,7 +48,7 @@ class MovieModel
         $firstLetter = $query[0];
         $apiUrl = "https://v2.sg.media-imdb.com/suggestion/{$firstLetter}/{$query}.json";
         $searchResults = $this->curlApi($apiUrl);
-        $_SESSION['data'] = $searchResults;
+        // $_SESSION['data'] = $searchResults;
         // $searchResults = $_SESSION['data']; // dummy data
         $movies = $this->parseSearchResults($searchResults);
 
@@ -132,7 +132,7 @@ class MovieModel
         }
 
         $query =
-            'INSERT INTO movies
+            'INSERT INTO magalis_favourites__movies
                 (imdb_id, title, year, genres, poster, rating, plot)
             VALUES (:imdb_id, :title, :year, :genres, :poster, :rating, :plot)';
         $stmt = $this->dbConn->connection->prepare($query);
@@ -150,7 +150,7 @@ class MovieModel
     {
         $query =
             "SELECT *
-            FROM movies
+            FROM magalis_favourites__movies
             WHERE imdb_id = :imdb_id;";
         $stmt = $this->dbConn->connection->prepare($query);
         $stmt->bindParam(':imdb_id', $imdbId);
