@@ -12,7 +12,7 @@ class LoginController
 
     public function login()
     {
-        if ($_SESSION['loggedIn']) {
+        if (!empty($_SESSION['loggedIn'])) {
             header('Location: index.php?page=admin');
             exit();
         }
