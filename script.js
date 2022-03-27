@@ -50,7 +50,16 @@ searchElem.addEventListener("input", () => {
         const titleMatch = title.toLowerCase().includes(query);
         const yearMatch = year.toString().includes(query);
 
-        if (titleMatch || yearMatch) {
+        const genrePs = card.children[2].children;
+        let genreMatch;
+        for (const genreP of genrePs) {
+            genreMatch = genreP.classList[1].toLowerCase().includes(query);
+            if (genreMatch) {
+                break;
+            }
+        }
+
+        if (titleMatch || yearMatch || genreMatch) {
             card.style.display = "flex";
         } else {
             card.style.display = "none";
