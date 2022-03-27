@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="Views/sass/style.css">
     <script defer src="script.js"></script>
 
-    <title>Magali's Collection</title>
+    <title>Magali's Favourites</title>
 </head>
 
 <body>
     <header>
-        <h1>Magali's<br>Collection</h1>
+        <h1>Magali's<br>Favourites</h1>
     </header>
 
     <main>
