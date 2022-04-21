@@ -24,3 +24,8 @@ Deployed with [Heroku](https://www.heroku.com/home)
 ## Author
 
 Made by [Magali Fabri](https://github.com/magalifabri?tab=repositories)
+
+
+## Screenshot
+
+<img src="https://raw.githubusercontent.com/magalifabri/magalis-favourites/main/screenshot.png" alt="screenshot of site" width="500"/>
